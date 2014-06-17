@@ -1,0 +1,5 @@
+Site/Content/
+Site/bin/
+Site/obj/
+*.suo
+packages/
