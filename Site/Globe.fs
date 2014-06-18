@@ -31,10 +31,10 @@ module Globe =
 
         let sphere =
             new THREE.Mesh(
-                new THREE.SphereGeometry(200., 40, 40, 0., 6.28, 0., 6.28), //
+                new THREE.SphereGeometry(200., 40, 40),
                 new THREE.MeshLambertMaterial(
                     MeshLambertMaterialConfiguration(
-                        Map = THREE.ImageUtils.LoadTexture("earth.jpg", JavaScript.Undefined) //
+                        Map = THREE.ImageUtils.LoadTexture("earth.jpg")
                     )
                 )
             )

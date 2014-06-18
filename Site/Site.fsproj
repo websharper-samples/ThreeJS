@@ -126,7 +126,7 @@
     <Reference Include="System.Numerics" />
     <Reference Include="System.Web" />
     <Reference Include="ThreeJs">
-      <HintPath>..\packages\WebSharper.ThreeJs.2.5.3.5\lib\net40\ThreeJs.dll</HintPath>
+      <HintPath>..\packages\WebSharper.ThreeJs.2.5.4.7\lib\net40\ThreeJs.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
