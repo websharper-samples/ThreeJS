@@ -11,6 +11,7 @@ module Client =
             !+ Cube.Sample
             !+ Globe.Sample
             !+ Flamingo.Sample
+            !+ Maze.Sample
         ]
 
     let Main = All.Show()
