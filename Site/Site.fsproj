@@ -111,6 +111,7 @@
     <Compile Include="Cube.fs" />
     <Compile Include="Globe.fs" />
     <Compile Include="Flamingo.fs" />
+    <Compile Include="Maze.fs" />
     <Compile Include="Client.fs" />
     <Content Include="index.html" />
     <Content Include="Web.config" />
@@ -120,14 +121,16 @@
     <None Include="flamingo.json" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="IntelliFactory.WebSharper.ThreeJs">
+      <HintPath>..\packages\WebSharper.ThreeJs.2.5.6.11\lib\net40\IntelliFactory.WebSharper.ThreeJs.dll</HintPath>
+    </Reference>
+    <Reference Include="IntelliFactory.WebSharper.ThreeJs.TrackballControls">
+      <HintPath>..\packages\WebSharper.ThreeJs.TrackballControls.2.5.4.8\lib\net40\IntelliFactory.WebSharper.ThreeJs.TrackballControls.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Web" />
-    <Reference Include="ThreeJs">
-      <HintPath>..\packages\WebSharper.ThreeJs.2.5.4.7\lib\net40\ThreeJs.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
 </Project>
