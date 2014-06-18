@@ -74,7 +74,7 @@ module Samples =
             Clear sMain
             Clear sSide
             s.Render(sMain)
-            let url = "http://github.com/intellifactory/websharper.d3/blob/master/Site/" + s.FileName
+            let url = "http://github.com/intellifactory/websharper.threejs/blob/master/Site/" + s.FileName
             let side =
                 Div [
                     Div []

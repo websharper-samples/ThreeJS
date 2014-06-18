@@ -107,15 +107,17 @@
   </ProjectExtensions>
   <ItemGroup>
     <Compile Include="Samples.fs" />
-    <Compile Include="Foo.fs" />
+    <Compile Include="Animations.fs" />
     <Compile Include="Cube.fs" />
     <Compile Include="Globe.fs" />
+    <Compile Include="Flamingo.fs" />
     <Compile Include="Client.fs" />
     <Content Include="index.html" />
     <Content Include="Web.config" />
     <None Include="packages.config" />
     <None Include="Style.css" />
     <None Include="earth.jpg" />
+    <None Include="flamingo.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

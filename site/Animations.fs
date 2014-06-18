@@ -10,13 +10,16 @@ module Animations =
 
     let current = ref (fun () -> ())
 
-    let rec frame() =
+    let rec frame () =
         (!current)()
-        JavaScript.Log "frame"
+        
         render frame
 
     let isStarted = ref false
-    let startIfNotStarted() =
-        if not !isStarted then
+    
+    let startIfNotStarted () =
+        if not !isStarted
+        then
             isStarted := true
+            
             render frame

@@ -8,8 +8,9 @@ module Client =
         let ( !+ ) x = Samples.Set.Singleton(x)
 
         Samples.Set.Create [
-            !+ Globe.Sample
             !+ Cube.Sample
+            !+ Globe.Sample
+            !+ Flamingo.Sample
         ]
 
     let Main = All.Show()

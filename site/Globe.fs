@@ -11,7 +11,11 @@ module Globe =
         let mouseX = ref 0.0
         let mouseY = ref 0.0
         
-        let renderer = new THREE.CanvasRenderer()
+        let renderer = new THREE.WebGLRenderer(
+                           WebGLRendererConfiguration(
+                               Antialias = true
+                           )
+                       )
 
         renderer.SetSize(640, 360)
         renderer.SetClearColor(0xffffff)
@@ -27,10 +31,10 @@ module Globe =
 
         let sphere =
             new THREE.Mesh(
-                new THREE.SphereGeometry(200., 20, 20, 0., 6.28, 0., 6.28),
+                new THREE.SphereGeometry(200., 40, 40, 0., 6.28, 0., 6.28), //
                 new THREE.MeshLambertMaterial(
                     MeshLambertMaterialConfiguration(
-                        Map = THREE.ImageUtils.LoadTexture("earth.jpg", JavaScript.Undefined)
+                        Map = THREE.ImageUtils.LoadTexture("earth.jpg", JavaScript.Undefined) //
                     )
                 )
             )
@@ -44,22 +48,23 @@ module Globe =
         Dom.Document.Current.AddEventListener("mousemove", (fun (e : Dom.Event) ->
             let ee = e :?> Dom.MouseEvent
             
-            mouseX := (float ee.ClientX) - Html5.Window.Self?innerWidth/2.
-            mouseY := (float ee.ClientY) - Html5.Window.Self?innerHeight/2.
+            mouseX := (float ee.ClientX) - Html5.Window.Self?innerWidth / 2.
+            mouseY := (float ee.ClientY) - Html5.Window.Self?innerHeight / 2.
         ), false)
 
         //---
         let rec frame () =
             renderer.Render(scene, camera)
 
-            camera.Position.X <- camera.Position.X + ((!mouseX - camera.Position.X) * 0.05)
-            camera.Position.Y <- camera.Position.Y + (((-1. * !mouseY) - camera.Position.Y) * 0.05)
+            camera.Position.X <- camera.Position.X + (!mouseX - camera.Position.X) * 0.05
+            camera.Position.Y <- camera.Position.Y + (-1. * !mouseY - camera.Position.Y) * 0.05
 
             camera.LookAt(scene.Position)
 
-            sphere.Rotation.Y <- sphere.Rotation.Y + 0.02
+            sphere.Rotation.Y <- sphere.Rotation.Y + 0.01
 
         Animations.current := frame
+
         Animations.startIfNotStarted()
         //--
 
