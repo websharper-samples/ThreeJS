@@ -84,7 +84,7 @@ module Maze =
         let camera = new THREE.PerspectiveCamera(45., 16./9.)
         let controls = new THREE.TrackballControls(camera)
 
-        camera.Position.Z <- 10.
+        camera.Position.Set(5., 3., 10.) |> ignore
 
         //---
         //Render loop

@@ -7,6 +7,7 @@ module Flamingo =
     open IntelliFactory.WebSharper.ThreeJs
     open IntelliFactory.WebSharper.Html5
     open IntelliFactory.WebSharper.JQuery
+    open IntelliFactory.WebSharper.Html
 
     let Main a =
         let renderer = new THREE.WebGLRenderer(
@@ -18,7 +19,22 @@ module Flamingo =
         renderer.SetSize(640, 360)
         renderer.SetClearColor(0xffffff)
 
-        JQuery.Of(a :> Dom.Node).Append(renderer.DomElement) |> ignore
+        let autoRotate = ref false
+
+        JQuery.Of(a :> Dom.Node).Append(renderer.DomElement).Append(
+            (Button [Attr.Style "display: block"] -< [Text "Auto rotate | On"]
+             |>! OnClick (fun a _ ->
+                     if not !autoRotate
+                     then
+                        autoRotate := true
+                        a.Text <- "Auto rotate | Off"
+
+                     else
+                        autoRotate := false
+                        a.Text <- "Auto rotate | On"
+                 )
+            ).Dom
+        ) |> ignore
 
         let scene = new THREE.Scene()
         let light = new THREE.DirectionalLight(0xffffff)
@@ -42,20 +58,24 @@ module Flamingo =
         )
 
         let camera = new THREE.PerspectiveCamera(45., 16./9.)
+        let controls = new THREE.TrackballControls(camera)
 
         camera.Position.Z <- 234.
 
         //---
         let rec frame () =
             renderer.Render(scene, camera)
+            controls.Update()
 
-            flamingo.Rotation.Y <- flamingo.Rotation.Y + 0.01
+            if !autoRotate
+            then
+                flamingo.Rotation.Y <- flamingo.Rotation.Y + 0.01
 
         Animations.current := frame
 
         Animations.startIfNotStarted()
         //---
-    
+
     let Sample =
         Samples.Build()
             .Id("Flamingo")
