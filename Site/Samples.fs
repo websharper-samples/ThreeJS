@@ -2,7 +2,8 @@
 
 open IntelliFactory.WebSharper
 open IntelliFactory.WebSharper.JQuery
-open IntelliFactory.WebSharper.Html
+open IntelliFactory.WebSharper.Html.Client
+open IntelliFactory.WebSharper.JavaScript
 
 /// Support code for the sample catalog.
 [<JavaScript>]

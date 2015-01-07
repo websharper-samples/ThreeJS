@@ -6,6 +6,7 @@ open IntelliFactory.WebSharper
 module Globe =
     open IntelliFactory.WebSharper.ThreeJs
     open IntelliFactory.WebSharper.JQuery
+    open IntelliFactory.WebSharper.JavaScript
 
     let Main a =
         let mouseX = ref 0.0
@@ -48,8 +49,8 @@ module Globe =
         Dom.Document.Current.AddEventListener("mousemove", (fun (e : Dom.Event) ->
             let ee = e :?> Dom.MouseEvent
             
-            mouseX := (float ee.ClientX) - Html5.Window.Self?innerWidth / 2.
-            mouseY := (float ee.ClientY) - Html5.Window.Self?innerHeight / 2.
+            mouseX := (float ee.ClientX) - JS.Window?innerWidth / 2.
+            mouseY := (float ee.ClientY) - JS.Window?innerHeight / 2.
         ), false)
 
         //---

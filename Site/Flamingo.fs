@@ -5,9 +5,10 @@ open IntelliFactory.WebSharper
 [<JavaScript>]
 module Flamingo =
     open IntelliFactory.WebSharper.ThreeJs
-    open IntelliFactory.WebSharper.Html5
+    //open IntelliFactory.WebSharper.Html5
     open IntelliFactory.WebSharper.JQuery
-    open IntelliFactory.WebSharper.Html
+    open IntelliFactory.WebSharper.Html.Client
+    open IntelliFactory.WebSharper.JavaScript
 
     let Main a =
         let renderer = new THREE.WebGLRenderer(

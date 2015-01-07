@@ -6,7 +6,7 @@ open IntelliFactory.WebSharper
 module Maze =
     open IntelliFactory.WebSharper.ThreeJs
     open IntelliFactory.WebSharper.JQuery
-    open IntelliFactory.WebSharper.Dom
+    open IntelliFactory.WebSharper.JavaScript
 
     let Main a =
         let A = [
@@ -21,7 +21,7 @@ module Maze =
                          new THREE.BoxGeometry(1., 1., 1.),
                          new THREE.MeshBasicMaterial(
                              MeshBasicMaterialConfiguration(
-                                 Color = "red"
+                                 Color = 0xff0000
                              )
                          )
                      )
@@ -63,9 +63,9 @@ module Maze =
         player.Position.Z <- 2.
 
         scene.Add(player)
-
-        Document.Current.AddEventListener("keyup", (fun (e : Event) ->
-            let ke = e :?> KeyboardEvent
+        
+        JS.Document.AddEventListener("keyup", (fun (e : Dom.Event) ->
+            let ke = e :?> Dom.KeyboardEvent
 
             movePlayer (match ke.KeyIdentifier with
                         | "Up" ->

@@ -6,6 +6,7 @@ open IntelliFactory.WebSharper
 module Cube =
     open IntelliFactory.WebSharper.ThreeJs
     open IntelliFactory.WebSharper.JQuery
+    open IntelliFactory.WebSharper.JavaScript
 
     let Main a =
         let renderer = new THREE.WebGLRenderer(
@@ -40,8 +41,8 @@ module Cube =
         let rec frame () =
             renderer.Render(scene, camera)
 
-            cube.Rotation.Y <- cube.Rotation.Y + (EcmaScript.Math.PI / 180.)
-            cube.Rotation.X <- cube.Rotation.X + (EcmaScript.Math.PI / 360.)
+            cube.Rotation.Y <- cube.Rotation.Y + (Math.PI / 180.)
+            cube.Rotation.X <- cube.Rotation.X + (Math.PI / 360.)
 
         Animations.current := frame
         Animations.startIfNotStarted()
