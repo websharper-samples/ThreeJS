@@ -1,12 +1,12 @@
 ﻿namespace Site
  
-open IntelliFactory.WebSharper
+open WebSharper
 
 [<JavaScript>]
 module Maze =
-    open IntelliFactory.WebSharper.ThreeJs
-    open IntelliFactory.WebSharper.JQuery
-    open IntelliFactory.WebSharper.JavaScript
+    open WebSharper.ThreeJs
+    open WebSharper.JQuery
+    open WebSharper.JavaScript
 
     let Main a =
         let A = [

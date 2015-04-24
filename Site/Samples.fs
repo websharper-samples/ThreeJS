@@ -1,9 +1,9 @@
 ﻿namespace Site
 
-open IntelliFactory.WebSharper
-open IntelliFactory.WebSharper.JQuery
-open IntelliFactory.WebSharper.Html.Client
-open IntelliFactory.WebSharper.JavaScript
+open WebSharper
+open WebSharper.JQuery
+open WebSharper.Html.Client
+open WebSharper.JavaScript
 
 /// Support code for the sample catalog.
 [<JavaScript>]
@@ -70,8 +70,8 @@ module Samples =
     type Sample with
 
         member s.Show() =
-            let sMain = Dom.Document.Current.GetElementById("sample-main")
-            let sSide = Dom.Document.Current.GetElementById("sample-side")
+            let sMain = JS.Window.Document.GetElementById("sample-main")
+            let sSide = JS.Window.Document.GetElementById("sample-side")
             Clear sMain
             Clear sSide
             s.Render(sMain)
@@ -80,7 +80,7 @@ module Samples =
                 Div [
                     Div []
                     |>! OnAfterRender (fun self ->
-                        match Dom.Document.Current.GetElementById(s.Id) with
+                        match JS.Window.Document.GetElementById(s.Id) with
                         | null -> ()
                         | el ->
                             let copy = el.CloneNode(true)
@@ -100,7 +100,7 @@ module Samples =
         member s.Show() =
             JQuery.JQuery.Of(fun () ->
                 let (Set samples) = s
-                let doc = Dom.Document.Current
+                let doc = JS.Window.Document
                 let select (s: Sample) (dom: Dom.Element) =
                     let j = JQuery.Of("#sample-navs ul").Children("li").RemoveClass("active")
                     JQuery.Of(dom).AddClass("active").Ignore

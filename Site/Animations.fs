@@ -1,7 +1,7 @@
 ﻿namespace Site
 
-open IntelliFactory.WebSharper
-open IntelliFactory.WebSharper.JavaScript
+open WebSharper
+open WebSharper.JavaScript
 
 [<JavaScript>]
 module Animations =

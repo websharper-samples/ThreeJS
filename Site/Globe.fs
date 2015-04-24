@@ -1,12 +1,12 @@
 ﻿namespace Site
  
-open IntelliFactory.WebSharper
+open WebSharper
 
 [<JavaScript>]
 module Globe =
-    open IntelliFactory.WebSharper.ThreeJs
-    open IntelliFactory.WebSharper.JQuery
-    open IntelliFactory.WebSharper.JavaScript
+    open WebSharper.ThreeJs
+    open WebSharper.JQuery
+    open WebSharper.JavaScript
 
     let Main a =
         let mouseX = ref 0.0
@@ -46,7 +46,7 @@ module Globe =
 
         camera.Position.Z <- 500.
 
-        Dom.Document.Current.AddEventListener("mousemove", (fun (e : Dom.Event) ->
+        JS.Window.Document.AddEventListener("mousemove", (fun (e : Dom.Event) ->
             let ee = e :?> Dom.MouseEvent
             
             mouseX := (float ee.ClientX) - JS.Window?innerWidth / 2.

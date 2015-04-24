@@ -1,14 +1,13 @@
 ﻿namespace Site
  
-open IntelliFactory.WebSharper
+open WebSharper
 
 [<JavaScript>]
 module Flamingo =
-    open IntelliFactory.WebSharper.ThreeJs
-    //open IntelliFactory.WebSharper.Html5
-    open IntelliFactory.WebSharper.JQuery
-    open IntelliFactory.WebSharper.Html.Client
-    open IntelliFactory.WebSharper.JavaScript
+    open WebSharper.ThreeJs
+    open WebSharper.JQuery
+    open WebSharper.Html.Client
+    open WebSharper.JavaScript
 
     let Main a =
         let renderer = new THREE.WebGLRenderer(
