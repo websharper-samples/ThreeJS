@@ -2,6 +2,6 @@
 
 [Samples][samp] for [WebSharper][ws] bindings to [three.js][tjs].
 
-[samp]: http://intellifactory.github.io/websharper.threejs
+[samp]: http://intellifactory.github.io/websharper.threejs.samples
 [tjs]: http://threejs.org/
 [ws]: http://websharper.com/
