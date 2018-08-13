@@ -116,6 +116,9 @@
     <None Include="flamingo.json" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.7.1\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="IntelliFactory.Xml">
       <HintPath>..\packages\IntelliFactory.Xml.0.6.64.1\lib\net40\IntelliFactory.Xml.dll</HintPath>
     </Reference>
@@ -141,12 +144,6 @@
     <Reference Include="WebSharper.Core.JavaScript, Version=4.5.0.0, Culture=neutral, PublicKeyToken=dcd983dec8f76a71">
       <HintPath>..\packages\WebSharper.4.5.0.290\lib\net461\WebSharper.Core.JavaScript.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="WebSharper.Html.Client">
-      <HintPath>..\packages\WebSharper.Html.4.5.0.142\lib\net461\WebSharper.Html.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="WebSharper.Html.Server">
-      <HintPath>..\packages\WebSharper.Html.4.5.0.142\lib\net461\WebSharper.Html.Server.dll</HintPath>
     </Reference>
     <Reference Include="WebSharper.InterfaceGenerator, Version=4.5.0.0, Culture=neutral, PublicKeyToken=dcd983dec8f76a71">
       <HintPath>..\packages\WebSharper.4.5.0.290\lib\net461\WebSharper.InterfaceGenerator.dll</HintPath>
@@ -175,6 +172,18 @@
     <Reference Include="WebSharper.ThreeJs.TrackballControls, Version=4.5.0.0, Culture=neutral, PublicKeyToken=dcd983dec8f76a71">
       <HintPath>..\packages\WebSharper.ThreeJs.TrackballControls.4.5.0.120\lib\net461\WebSharper.ThreeJs.TrackballControls.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="WebSharper.UI">
+      <HintPath>..\packages\WebSharper.UI.4.5.0.140\lib\net461\WebSharper.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="WebSharper.UI.Templating">
+      <HintPath>..\packages\WebSharper.UI.4.5.0.140\lib\net461\WebSharper.UI.Templating.dll</HintPath>
+    </Reference>
+    <Reference Include="WebSharper.UI.Templating.Common">
+      <HintPath>..\packages\WebSharper.UI.4.5.0.140\lib\net461\WebSharper.UI.Templating.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="WebSharper.UI.Templating.Runtime">
+      <HintPath>..\packages\WebSharper.UI.4.5.0.140\lib\net461\WebSharper.UI.Templating.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="WebSharper.Web, Version=4.5.0.0, Culture=neutral, PublicKeyToken=dcd983dec8f76a71">
       <HintPath>..\packages\WebSharper.4.5.0.290\lib\net461\WebSharper.Web.dll</HintPath>

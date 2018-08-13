@@ -67,14 +67,14 @@ module Maze =
         JS.Document.AddEventListener("keyup", (fun (e : Dom.Event) ->
             let ke = e :?> Dom.KeyboardEvent
 
-            movePlayer (match ke.KeyIdentifier with
-                        | "Up" ->
+            movePlayer (match ke.Key with
+                        | "ArrowUp" ->
                             (0, -1)
-                        | "Right" ->
+                        | "ArrowRight" ->
                             (1, 0)
-                        | "Down" ->
+                        | "ArrowDown" ->
                             (0, 1)
-                        | "Left" ->
+                        | "ArrowLeft" ->
                             (-1, 0)
                         | _ ->
                             (0, 0)

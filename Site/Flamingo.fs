@@ -6,7 +6,10 @@ open WebSharper
 module Flamingo =
     open WebSharper.ThreeJs
     open WebSharper.JQuery
-    open WebSharper.Html.Client
+    open WebSharper.UI
+    open WebSharper.UI.Html
+    open WebSharper.UI.Client
+    open WebSharper.UI.Notation
     open WebSharper.JavaScript
 
     let Main a =
@@ -19,22 +22,18 @@ module Flamingo =
         renderer.SetSize(640, 360)
         renderer.SetClearColor(0xffffff)
 
-        let autoRotate = ref false
+        let autoRotate = Var.Create false
 
-        JQuery.Of(a :> Dom.Node).Append(renderer.DomElement).Append(
-            (Button [Attr.Style "display: block"] -< [Text "Auto rotate | On"]
-             |>! OnClick (fun a _ ->
-                     if not !autoRotate
-                     then
-                        autoRotate := true
-                        a.Text <- "Auto rotate | Off"
-
-                     else
-                        autoRotate := false
-                        a.Text <- "Auto rotate | On"
-                 )
-            ).Dom
-        ) |> ignore
+        Doc.Concat [
+            Doc.Static renderer.DomElement
+            button [
+                Attr.Style "display" "block"
+                on.click (fun a _ -> autoRotate := not !autoRotate)
+            ] [
+                text ("Auto rotate | " + if autoRotate.V then "On" else "Off")
+            ]
+        ]
+        |> Doc.RunAppend a
 
         let scene = new THREE.Scene()
         let light = new THREE.DirectionalLight(0xffffff)
