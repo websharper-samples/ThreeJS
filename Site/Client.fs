@@ -14,4 +14,6 @@ module Client =
             !+ Maze.Sample
         ]
 
-    let Main = All.Show()
+    [<SPAEntryPoint>]
+    let Main() =
+        All.Show()
