@@ -18,4 +18,4 @@ on_success:
 
 environment:
   GH_TOKEN:
-    secure: SGKxAHh17EylZMuifTyQc5kref7CkpsScvoO/349PKC+Mzckymlyp/lXT+ZhGtAS
+    secure: bq5ChGM2LDt781aGtGzpf6E+sqWnxL/etHlEG768cIMq8SjsQFRHuz8un+MHU8Oa
