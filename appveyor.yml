@@ -19,5 +19,3 @@ on_success:
 environment:
   GH_TOKEN:
     secure: SGKxAHh17EylZMuifTyQc5kref7CkpsScvoO/349PKC+Mzckymlyp/lXT+ZhGtAS
-  NG_TOKEN:
-    secure: FQfgTTROXcWRfd//dejttogCD9EjQzBnzGYwY2Jf15X9YqJ9g5aYMwG8q9GIursS
